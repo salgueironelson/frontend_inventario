@@ -25,3 +25,8 @@ git push -u origin develop
 git flow init           para iniciar git flow
 
 ...
+
+### Crear una nueva funcionalidad
+git flow feature start <nombre de la rama>
+
+git flow feature finish <nombre de la rama>
