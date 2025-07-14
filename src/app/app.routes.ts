@@ -1,3 +1,38 @@
 import { Routes } from '@angular/router';
+import { Inicio } from './web/inicio/inicio';
+import { Servicios } from './web/servicios/servicios';
+import { Contactos } from './web/contactos/contactos';
+import { Nosotros } from './web/nosotros/nosotros';
+import { Error404 } from './errors/error404/error404';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    {
+        path: '',
+        component: Inicio,
+    },
+    {
+        path: 'servicios',
+        component: Servicios
+    },
+    {
+        path: 'nosotros',
+        component: Nosotros
+    },
+    {
+        path: 'contactos',
+        component: Contactos
+    },
+    {
+        path: 'auth',
+        loadChildren: () => import('./auth/auth-module').then(m => m.AuthModule)
+    },
+    {
+        path: 'admin',
+        loadChildren: () => import('./admin/admin-module').then(m => m.AdminModule)
+    },
+    {
+        path: '**',
+        component: Error404 
+    }
+
+];
