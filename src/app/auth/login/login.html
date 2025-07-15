@@ -1,1 +1,17 @@
-<p>login works!</p>
+<h1> Ingrese sus credenciales </h1>
+<form [formGroup] ="loginForm" >
+  <div>
+    <label for="">Ingrese su Correo:</label>
+    <input type="text" formControlName="email"/>
+    <br/>
+  </div>
+  <div>
+    <label for="">Ingrese su Contraseña:</label>
+    <input type="password" formControlName="password" />
+    <br/>
+  </div>
+  <button type="submit" [disabled]="!loginForm.valid" >Iniciar Sesión</button>
+</form>
+
+{{ loginForm.value.email }}
+{{ loginForm.value.password }}
